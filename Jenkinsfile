@@ -19,7 +19,8 @@ pipeline{
             steps{
                 
                 script{
-                    
+                    def mavenHome = tool name:"3.8.6", type="maven"
+                    def mavenCMD ="${mavenHome}/bin/mvn"
                     sh 'mvn -v'
                 }
             }
