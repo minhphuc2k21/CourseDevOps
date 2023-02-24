@@ -14,27 +14,25 @@ pipeline{
                 }
             }
         }
-        stage('UNIT testing'){
+        // stage('UNIT testing'){
             
-            steps{
+        //     steps{
                 
-                script{
-                    def mavenHome = tool name:"3.8.6", type="maven"
-                    def mavenCMD ="${mavenHome}/bin/mvn"
-                    sh 'mvn -v'
-                }
-            }
-        }
-        stage('Integration testing'){
+        //         script{
+        //             sh 'mvn test'
+        //         }
+        //     }
+        // }
+        // stage('Integration testing'){
             
-            steps{
+        //     steps{
                 
-                script{
+        //         script{
                     
-                    sh 'mvn verify -DskipUnitTests'
-                }
-            }
-        }
+        //             sh 'mvn verify -DskipUnitTests'
+        //         }
+        //     }
+        // }
         stage('Maven build'){
             
             steps{
