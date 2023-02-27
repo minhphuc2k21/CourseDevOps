@@ -1,10 +1,10 @@
 pipeline{
     
     agent any 
-     tools { 
-      maven 'MAVEN_HOME' 
-      jdk 'JAVA_HOME' 
-    }
+    //  tools { 
+    //   maven 'MAVEN_HOME' 
+    //   jdk 'JAVA_HOME' 
+    // }
     
     stages {
         
@@ -23,8 +23,8 @@ pipeline{
             steps{
                 
                 script{
-            echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
+            // echo "PATH = ${PATH}"
+            //         echo "M2_HOME = ${M2_HOME}"
                     sh 'mvn test'
                 }
             }
