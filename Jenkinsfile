@@ -1,6 +1,10 @@
 pipeline{
     
     agent any 
+     tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'JAVA_HOME' 
+    }
     
     stages {
         
@@ -14,25 +18,27 @@ pipeline{
                 }
             }
         }
-        // stage('UNIT testing'){
+        stage('UNIT testing'){
             
-        //     steps{
+            steps{
                 
-        //         script{
-        //             sh 'mvn test'
-        //         }
-        //     }
-        // }
-        // stage('Integration testing'){
+                script{
+            echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Integration testing'){
             
-        //     steps{
+            steps{
                 
-        //         script{
+                script{
                     
-        //             sh 'mvn verify -DskipUnitTests'
-        //         }
-        //     }
-        // }
+                    sh 'mvn verify -DskipUnitTests'
+                }
+            }
+        }
         stage('Maven build'){
             
             steps{
