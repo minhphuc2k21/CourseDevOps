@@ -14,7 +14,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'main', url: 'https://github.com/minhphuc2k21/End-to-End-DevOps-CI-CD-Project.git'
+                    git branch: 'main', url: 'https://github.com/minhphuc2k21/CourseDevOps.git'
                 }
             }
         }
