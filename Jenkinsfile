@@ -44,6 +44,16 @@ pipeline{
                     }
                 }
             }
+            // stage('docker build and push to Nexus repo'){
+                
+            //     steps{
+                    
+            //         script{
+                        
+            //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+            //         }
+            //     }
+            // }
         }
         
 }
